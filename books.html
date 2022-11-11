@@ -1,0 +1,138 @@
+<html>
+<head>
+	
+    <link rel="stylesheet" type="text/css" href="Sample.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        table{
+            background-color: aliceblue;
+
+        }
+        th {
+            background-color: antiquewhite;
+        }
+        
+    </style>
+
+</head>
+<body class="site-header">
+    <div class="menu" >
+        <ul class="menu">
+            <li><a href="lib.html">Home</a></li>
+               
+            
+        </ul><br><br>
+        
+        <h1>List of Books</h1><br><br>
+              <input type="text" id="name" onkeyup="myFunction(0,'name')" placeholder="Search By Title.." title="Type in a name"> &nbsp;
+              <input type="text" id="country" onkeyup="myFunction(1,'country')" placeholder="Search By Author.." title="Type in a name">&nbsp;
+              <input type="text" id="age" onkeyup="myFunction(2,'age')" placeholder="Search By Genre.." title="Type in a name">&nbsp;
+              <input type="text" id="salary" onkeyup="myFunction(3,'salary')" placeholder="Search By Publish Dates.." title="Type in a name">&nbsp;
+        <table id="empTable" border="1" width="100%">           
+               <tr>
+              <th style="width:30%;">Title</th>
+              <th style="width:30%;">Author</th>
+               <th>Genre</th>
+              <th>Publish Dates</th>
+            </tr>
+           <tr>
+              <td>A Better India</td>
+              <td>Narayana Murthy</td>
+              <td>Scentific</td>
+              <td>21-12-2000</td>
+            </tr>
+            <tr>
+              <td>A Passage to India</td>
+              <td>E.M. Foster</td>
+              <td>anime</td>
+              <td>15-06-2000</td>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td>INDIA</td>
+              <td>Romantic</td>
+              <td>12-12-2009</td>
+            </tr>
+            <tr>
+              <td>A Revenue Stamp</td>
+              <td>Amrita Pritam</td>
+              <td>Scientific</td>
+              <td>04-04-2004</td>
+            </tr>
+            <tr>
+              <td>Death of a City</td>
+              <td>Amrita Pritam</td>
+              <td>Horror</td>
+              <td>15-05-2013</td>
+            </tr>
+            <tr>
+              <td>Pinjar</td>
+              <td>Amrita Pritam</td>
+              <td>Anime</td>
+              <td>15-09-2012</td>
+            </tr>
+            <tr>
+              <td>A Suitable Boy</td>
+              <td>Vikram Seth</td>
+              <td>scientific</td>
+              <td>14-08-2016</td>
+            </tr>
+            <tr>
+              <td>A Tale of Two Cities</td>
+              <td>Charles Darwin</td>
+              <td>horror</td>
+              <td>28-09-2001</td>
+            </tr>
+            <tr>
+              <td>David Copperfield</td>
+              <td>Charles Darwin</td>
+              <td>anime</td>
+              <td>13-03-2000</td>
+            </tr>
+            <tr>
+              <td>Oliver Twist</td>
+              <td>Charles Darwin</td>
+              <td>romance</td>
+              <td>18-12-2011</td>
+            </tr>
+            <tr>
+              <td>Origin of Species</td>
+              <td>Charles Darwin</td>
+              <td>fiction</td>
+              <td>03-12-1997</td>
+            </tr>
+            <tr>
+              <td>A Week with Gandhi</td>
+              <td>Louis Fisher</td>
+              <td>fiction</td>
+              <td>08-12-1989</td>
+            </tr>
+          </table>
+          <p>Scroll down for more books</p>
+    </div>
+    
+    <script>
+        function myFunction(index,inputname) {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById(inputname);
+            filter = input.value.toUpperCase();
+            table = document.getElementById("empTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[index];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                    if(tr[i].style.display=="")
+                    {
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        } else {
+                        tr[i].style.display = "none";
+                        }
+                    }
+                }       
+            }
+        }
+    </script>
+</body>
+</html>
